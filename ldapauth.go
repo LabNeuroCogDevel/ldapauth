@@ -2,7 +2,7 @@ package ldapauth
 
 import (
     "fmt"
-    "log"
+//    "log"
     "strings"
     "gopkg.in/ldap.v2"
 )
@@ -24,8 +24,8 @@ func AuthLdap(user string,password string) error{
 func IsAuth(user string, password string) bool {
   err:=AuthLdap(user,password)
   if(err != nil ){
-    log.Fatal(err)
     return false
+    //log.Fatal(err)
   } else {
    return true
   }

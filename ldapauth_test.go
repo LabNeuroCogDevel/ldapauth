@@ -21,3 +21,11 @@ func TestLDAPAuth(t *testing.T){
     t.Error("Expeciting auth for foranw, not auth'ed!", isauth)
   }
 }
+
+func TestLDAPAuthFail(t *testing.T){
+
+  isauth := ldapauth.IsAuth("doesnotexist","willnotautheticate")
+  if isauth {
+    t.Error("Expeciting auth for nonsense user to fail", isauth)
+  }
+}
